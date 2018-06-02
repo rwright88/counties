@@ -22,13 +22,11 @@ read_life <- function(path) {
 #'
 #' @return A data frame.
 #' @export
-clean_life <- function(path) {
+get_life <- function(path) {
   files <- list.files(path, pattern = "*.CSV", full.names = TRUE)
 
   purrr::map_dfr(files, read_life) %>%
-    dplyr::mutate(
-      county_fips = stringr::str_pad(FIPS, width = 5, pad = "0")
-    ) %>%
+    dplyr::mutate(county_fips = stringr::str_pad(FIPS, width = 5, pad = "0")) %>%
     dplyr::filter(
       measure_id == 26,
       county_fips != "00001",
