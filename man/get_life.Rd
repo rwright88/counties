@@ -2,7 +2,7 @@
 % Please edit documentation in R/life-expect.R
 \name{get_life}
 \alias{get_life}
-\title{Clean life expectancy data}
+\title{Get life expectancy data}
 \usage{
 get_life(path)
 }
@@ -13,5 +13,5 @@ get_life(path)
 A data frame.
 }
 \description{
-Clean life expectancy data
+Get life expectancy data
 }
