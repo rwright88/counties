@@ -1,0 +1,18 @@
+Package: counties
+Version: 0.0.0.9000
+Title: Create US County Dataset
+Description: Create US county dataset of the best available demographic, 
+    health, income, and other data.
+Authors@R: person("Ray", "Wright", , "rwright88@gmail.com", c("aut", "cre"))
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Imports: 
+    dplyr,
+    readr,
+    stringr,
+    purrr
+Suggests: 
+    testthat
+RoxygenNote: 6.0.1
