@@ -15,7 +15,7 @@ library(counties)
 
 get_life()
 #> # A tibble: 111,720 x 3
-#>   year county_fips life_expect
+#>     year county_fips life_expect
 #>    <int> <chr>             <dbl>
 #>  1  1980 01001              72.0
 #>  2  1981 01001              72.3
