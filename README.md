@@ -1,6 +1,6 @@
 # counties
 
-The goal of `counties` is to make it easy to create a US county dataset of the best available demographic, health, income, and other data.
+The goal of counties is to make it easy to create a US county dataset of the best available demographic, health, income, and other data.
 
 ## Installation
 
@@ -29,3 +29,7 @@ get_life()
 #> 10  1989 01001              73.2
 #> # ... with 111,710 more rows
 ```
+
+## Sources
+
+- http://ghdx.healthdata.org/us-data
