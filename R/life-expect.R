@@ -3,7 +3,8 @@
 #' @param path A path to a file.
 #'
 #' @import readr
-#' @return A data frame.
+#' @return \code{tbl_df} with five columns: \code{measure_id}, \code{FIPS},
+#'         \code{sex_id}, \code{year_id}, \code{val}
 read_life <- function(path) {
   read_csv(
     path,
@@ -19,15 +20,28 @@ read_life <- function(path) {
 
 #' Get life expectancy data
 #'
-#' @param path A path to a directory of files.
+#' Get life expectancy data by year and county from the Global Health Data Exchange
 #'
-#' @return A data frame.
+#' @references \url{http://ghdx.healthdata.org/us-data}
+#' @return \code{tbl_df} with three columns: \code{year}, \code{county_fips},
+#'         \code{life_expect}
 #' @import dplyr purrr stringr
 #' @export
-get_life <- function(path) {
-  files <- list.files(path, pattern = "*.CSV", full.names = TRUE)
+#' @examples \dontrun{
+#' get_life()
+#' }
+get_life <- function() {
+  # this probably changes often
+  url <- str_c(
+    "http://ghdx.healthdata.org/sites/default/files/record-attached-files/",
+    "IHME_USA_COUNTY_LE_MORTALITY_RISK_1980_2014_NATIONAL_STATES_DC_CSV.zip"
+  )
 
-  map_dfr(files, read_life) %>%
+  temp <- tempfile()
+  download.file(url, temp)
+  files <- unzip(temp, list = TRUE)[["Name"]]
+
+  df <- map_dfr(files, ~ read_life(unz(temp, .))) %>%
     mutate(county_fips = str_pad(FIPS, width = 5, pad = "0")) %>%
     filter(
       measure_id == 26,
@@ -39,4 +53,8 @@ get_life <- function(path) {
       county_fips,
       life_expect = val
     )
+
+  unlink(temp)
+
+  df
 }

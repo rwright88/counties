@@ -4,14 +4,20 @@
 \alias{get_life}
 \title{Get life expectancy data}
 \usage{
-get_life(path)
-}
-\arguments{
-\item{path}{A path to a directory of files.}
+get_life()
 }
 \value{
-A data frame.
+\code{tbl_df} with three columns: \code{year}, \code{county_fips},
+        \code{life_expect}
 }
 \description{
-Get life expectancy data
+Get life expectancy data by year and county from the Global Health Data Exchange
+}
+\examples{
+\dontrun{
+get_life()
+}
+}
+\references{
+\url{http://ghdx.healthdata.org/us-data}
 }

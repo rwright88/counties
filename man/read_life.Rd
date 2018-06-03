@@ -10,7 +10,8 @@ read_life(path)
 \item{path}{A path to a file.}
 }
 \value{
-A data frame.
+\code{tbl_df} with five columns: \code{measure_id}, \code{FIPS},
+        \code{sex_id}, \code{year_id}, \code{val}
 }
 \description{
 Read life expectancy data.
