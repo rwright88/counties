@@ -1,5 +1,6 @@
 context("test-life-expect.R")
 
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("get_life returns a data frame", {
+  df <- get_life()
+  expect_is(df, class = "data.frame")
 })
