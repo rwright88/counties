@@ -12,6 +12,7 @@ Imports:
     dplyr,
     purrr,
     readr,
+    rvest,
     stringr
 Suggests: 
     testthat

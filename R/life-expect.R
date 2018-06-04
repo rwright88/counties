@@ -25,17 +25,24 @@ read_life <- function(path) {
 #' @references \url{http://ghdx.healthdata.org/us-data}
 #' @return \code{tbl_df} with three columns: \code{year}, \code{county_fips},
 #'         \code{life_expect}
-#' @import dplyr purrr stringr
+#' @import dplyr purrr stringr rvest
 #' @export
 #' @examples \dontrun{
 #' get_life()
 #' }
 get_life <- function() {
   # this probably changes often
-  url <- str_c(
-    "http://ghdx.healthdata.org/sites/default/files/record-attached-files/",
-    "IHME_USA_COUNTY_LE_MORTALITY_RISK_1980_2014_NATIONAL_STATES_DC_CSV.zip"
-  )
+  # url <- str_c(
+  #   "http://ghdx.healthdata.org/sites/default/files/record-attached-files/",
+  #   "IHME_USA_COUNTY_LE_MORTALITY_RISK_1980_2014_NATIONAL_STATES_DC_CSV.zip"
+  # )
+
+  # scrape page to find file
+  url <- read_html("http://ghdx.healthdata.org/us-data") %>%
+    html_nodes("a") %>%
+    html_attr("href") %>%
+    .[str_detect(., "IHME_USA_COUNTY_LE_MORTALITY_RISK")] %>%
+    .[str_detect(., "NATIONAL_STATES_DC_CSV")]
 
   temp <- tempfile()
   download.file(url, temp)
