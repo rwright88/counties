@@ -1,4 +1,4 @@
-context("test-life-expect.R")
+context("test-get-life.R")
 
 test_that("get_life returns a data frame", {
   df <- get_life()

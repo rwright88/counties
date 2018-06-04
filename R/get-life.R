@@ -32,13 +32,13 @@ read_life <- function(path) {
 #' }
 get_life <- function() {
   # this probably changes often
-  url <- str_c(
+  file1 <- str_c(
     "http://ghdx.healthdata.org/sites/default/files/record-attached-files/",
     "IHME_USA_COUNTY_LE_MORTALITY_RISK_1980_2014_NATIONAL_STATES_DC_CSV.zip"
   )
 
   temp <- tempfile()
-  download.file(url, temp)
+  download.file(file1, temp)
   files <- unzip(temp, list = TRUE)[["Name"]]
 
   df <- map_dfr(files, ~ read_life(unz(temp, .))) %>%
