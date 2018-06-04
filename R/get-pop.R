@@ -59,8 +59,8 @@ rec_race <- function(x) {
 #'
 #' @references \url{https://www2.census.gov/programs-surveys/popest/datasets/}
 #' @return \code{tbl_df} with seven columns: \code{year}, \code{county_fips},
-#'         \code{population}, \code{white_perc}, \code{black_perc},
-#'         \code{hispa_perc}, \code{asian_perc}
+#'         \code{population}, \code{asian}, \code{black}, \code{hispa},
+#'         \code{white}
 #' @import dplyr tidyr stringr
 #' @export
 #' @examples \dontrun{
@@ -103,5 +103,5 @@ get_pop <- function() {
     select(-other)
 
   population %>%
-    left_join(ratio)
+    left_join(ratio, by = c("year", "county_fips"))
 }
