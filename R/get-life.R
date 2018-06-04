@@ -45,14 +45,15 @@ get_life <- function() {
     mutate(county_fips = str_pad(FIPS, width = 5, pad = "0")) %>%
     filter(
       measure_id == 26,
-      county_fips != "00001",
+      str_sub(county_fips, 1, 2) != "00",
       sex_id == 3
     ) %>%
     select(
       year = year_id,
       county_fips,
       life_expect = val
-    )
+    ) %>%
+    arrange(year, county_fips)
 
   unlink(temp)
 
