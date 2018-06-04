@@ -43,10 +43,10 @@ read_pop <- function(path) {
 #' @return A vector the same size as \code{x}.
 rec_race <- function(x) {
   case_when(
-    str_detect(x, "nhwa")  ~ "white",
-    str_detect(x, "nhba")  ~ "black",
-    str_detect(x, "h_")    ~ "hispa",
-    str_detect(x, "nhaa")  ~ "asian",
+    str_detect(x, "nhwa") ~ "white",
+    str_detect(x, "nhba") ~ "black",
+    str_detect(x, "h_") ~ "hispa",
+    str_detect(x, "nhaa") ~ "asian",
     str_detect(x, "nhia|nhna|nhtom") ~ "other",
     TRUE ~ NA_character_
   )
