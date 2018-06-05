@@ -8,8 +8,8 @@ get_pop()
 }
 \value{
 \code{tbl_df} with seven columns: \code{year}, \code{county_fips},
-        \code{population}, \code{white_perc}, \code{black_perc},
-        \code{hispa_perc}, \code{asian_perc}
+        \code{population}, \code{asian}, \code{black}, \code{hispa},
+        \code{white}
 }
 \description{
 Get population and demograhpic data by year and county from the US Census
