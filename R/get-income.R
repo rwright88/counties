@@ -6,7 +6,7 @@
 #' @return \code{tbl_df} with 3 columns: \code{state}, \code{county},
 #'         \code{income_hh}, \code{year}
 read_income <- function(path) {
-  # for now, name of file must contain year
+  # for now, name of file must contain year of data
   read_fwf(
     path,
     col_positions = fwf_cols(
@@ -33,12 +33,7 @@ read_income <- function(path) {
 #' get_pop()
 #' }
 get_income <- function() {
-  # file1 <- str_c(
-  #   "https://www2.census.gov/programs-surveys/saipe/datasets/2016/",
-  #   "2016-state-and-county/est16all.txt"
-  # )
-  #
-  # # scrape pages to get files
+  # scrape pages to get files
   url <- "https://www2.census.gov/programs-surveys/saipe/datasets/"
   # urls <- read_html(url) %>%
   #   html_nodes("a") %>%
