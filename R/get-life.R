@@ -38,8 +38,8 @@ get_life <- function() {
   )
 
   temp <- tempfile()
-  download.file(file1, temp)
-  files <- unzip(temp, list = TRUE)[["Name"]]
+  utils::download.file(file1, temp)
+  files <- utils::unzip(temp, list = TRUE)[["Name"]]
 
   df <- map_dfr(files, ~ read_life(unz(temp, .))) %>%
     mutate(county_fips = str_pad(FIPS, width = 5, pad = "0")) %>%

@@ -23,7 +23,7 @@ read_income <- function(path) {
 #' Get income data
 #'
 #' Get income data by year and county from the US Census Bureau. Income is
-#' median household income in ???? dollars.
+#' median household income in nominal dollars.
 #'
 #' @references \url{https://www2.census.gov/programs-surveys/saipe/datasets/}
 #' @return \code{tbl_df} with seven columns: \code{year}, \code{income_hh}
