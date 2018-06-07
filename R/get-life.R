@@ -38,7 +38,7 @@ get_life <- function() {
   )
 
   temp <- tempfile()
-  utils::download.file(file1, temp)
+  utils::download.file(file1, temp, quiet = TRUE)
   files <- utils::unzip(temp, list = TRUE)[["Name"]]
 
   df <- map_dfr(files, ~ read_life(unz(temp, .))) %>%

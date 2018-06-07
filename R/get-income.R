@@ -33,16 +33,23 @@ read_income <- function(path) {
 #' get_pop()
 #' }
 get_income <- function() {
-  # scrape pages to get files
   url <- "https://www2.census.gov/programs-surveys/saipe/datasets/"
-  # urls <- read_html(url) %>%
-  #   html_nodes("a") %>%
-  #   html_attr("href") %>%
-  #   .[str_detect(., "^\\d{4}/")] %>%
-  #   .[!is.na(.)] %>%
-  #   str_c(url, .)
-
   files <- str_c(url, c(
+    "2000/2000-state-and-county/est00all.dat",
+    "2001/2001-state-and-county/est01all.dat",
+    "2002/2002-state-and-county/est02all.dat",
+    "2003/2003-state-and-county/est03all.dat",
+    "2004/2004-state-and-county/est04all.txt",
+    "2005/2005-state-and-county/est05all.txt",
+    "2006/2006-state-and-county/est06all.txt",
+    "2007/2007-state-and-county/est07all.txt",
+    "2008/2008-state-and-county/est08all.txt",
+    "2009/2009-state-and-county/est09all.txt",
+    "2010/2010-state-and-county/est10all.txt",
+    "2011/2011-state-and-county/est11all.txt",
+    "2012/2012-state-and-county/est12all.txt",
+    "2013/2013-state-and-county/est13all.txt",
+    "2014/2014-state-and-county/est14all.txt",
     "2015/2015-state-and-county/est15all.txt",
     "2016/2016-state-and-county/est16all.txt"
   ))
