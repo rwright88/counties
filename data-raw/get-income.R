@@ -63,3 +63,7 @@ get_income <- function() {
     select(year, county_fips, income_hh) %>%
     arrange(year, county_fips)
 }
+
+income <- get_income()
+
+devtools::use_data(income)

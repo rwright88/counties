@@ -59,3 +59,7 @@ get_life <- function() {
 
   df
 }
+
+life <- get_life()
+
+devtools::use_data(life)

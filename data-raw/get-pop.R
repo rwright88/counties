@@ -105,3 +105,7 @@ get_pop <- function() {
   population %>%
     left_join(ratio, by = c("year", "county_fips"))
 }
+
+pop <- get_pop()
+
+devtools::use_data(pop)
