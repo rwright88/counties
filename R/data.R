@@ -2,19 +2,13 @@
 #'
 #' Life expectancy data by year and county from the Global Health Data Exchange.
 #'
-#' @format A data frame with nine variables:
+#' @format A data frame with three variables:
 #' \describe{
-#' \item{\code{x}}{age in years}
-#' \item{\code{qx}}{probability of death at age \code{x}}
-#' \item{\code{lx}}{number of survivors, of birth cohort of 100,000, at next integral age}
-#' \item{\code{dx}}{number of deaths that would occur between integral ages}
-#' \item{\code{Lx}}{Number of person-years lived between \code{x} and \code{x+1}}
-#' \item{\code{Tx}}{Total number of person-years lived beyond age \code{x}}
-#' \item{\code{ex}}{Average number of years of life remaining for members of cohort alive at age \code{x}}
-#' \item{\code{sex}}{Sex}
-#' \item{\code{year}}{Year}
+#' \item{\code{year}}{year}
+#' \item{\code{county_fips}}{county FIPS code}
+#' \item{\code{life_expect}}{life expectancy at birth}
 #' }
 #'
-#' For further details, see \url{http://www.ssa.gov/oact/NOTES/as120/LifeTables_Body.html#wp1168594}
+#' For further details, see \url{http://ghdx.healthdata.org/us-data}
 #'
 "life"
