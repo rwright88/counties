@@ -17,7 +17,7 @@ read_income <- function(path) {
     col_types = "cci",
     na = c("NA", "", ".")
   ) %>%
-    mutate(year = str_extract(path, "\\d{4}"))
+    mutate(year = as.integer(str_extract(path, "\\d{4}")))
 }
 
 #' Get income data
