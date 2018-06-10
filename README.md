@@ -1,6 +1,6 @@
 # counties
 
-Make it easy to get the best available demographic, health, income, and other US county data.
+This package contains US county data by year for demographics, income, health, and other data.
 
 ## Installation
 
@@ -8,16 +8,8 @@ Make it easy to get the best available demographic, health, income, and other US
 devtools::install_github("rwright88/counties")
 ```
 
-## Usage
-
-``` r
-library(counties)
-
-
-```
-
 ## Sources
 
 - https://www2.census.gov/programs-surveys/popest/datasets/
-- http://ghdx.healthdata.org/us-data
 - https://www2.census.gov/programs-surveys/saipe/datasets/
+- http://ghdx.healthdata.org/us-data

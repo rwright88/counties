@@ -1,20 +1,53 @@
-#' Life expectancy
+#' @importFrom tibble tibble
+NULL
+
+#' Demographics
 #'
-#' Life expectancy data by year and county from the Global Health Data Exchange.
+#' Demographics and population data by year and county from the US Census
+#' Bureau. Population is the population estimate as of July 1 of that year.
 #'
-#' @format A data frame with nine variables:
+#' @format A data frame with seven variables:
 #' \describe{
-#' \item{\code{x}}{age in years}
-#' \item{\code{qx}}{probability of death at age \code{x}}
-#' \item{\code{lx}}{number of survivors, of birth cohort of 100,000, at next integral age}
-#' \item{\code{dx}}{number of deaths that would occur between integral ages}
-#' \item{\code{Lx}}{Number of person-years lived between \code{x} and \code{x+1}}
-#' \item{\code{Tx}}{Total number of person-years lived beyond age \code{x}}
-#' \item{\code{ex}}{Average number of years of life remaining for members of cohort alive at age \code{x}}
-#' \item{\code{sex}}{Sex}
 #' \item{\code{year}}{Year}
+#' \item{\code{county_fips}}{FIPS county code}
+#' \item{\code{population}}{Population estimate as of July 1}
+#' \item{\code{asian}}{Distribution of population that is Asian}
+#' \item{\code{black}}{Distribution of population that is Black}
+#' \item{\code{hispanic}}{Distribution of population that is Hispanic}
+#' \item{\code{white}}{Distribution of population that is White}
 #' }
 #'
-#' For further details, see \url{http://www.ssa.gov/oact/NOTES/as120/LifeTables_Body.html#wp1168594}
+#' For further details, see \url{https://www2.census.gov/programs-surveys/popest/datasets/}
+#'
+"demographics"
+
+#' Income
+#'
+#' Income data by year and county from the US Census Bureau. Income is median
+#' household income in nominal dollars.
+#'
+#' @format A data frame with three variables:
+#' \describe{
+#' \item{\code{year}}{Year}
+#' \item{\code{county_fips}}{FIPS county code}
+#' \item{\code{income_hh}}{Median household income}
+#' }
+#'
+#' For further details, see \url{https://www2.census.gov/programs-surveys/saipe/datasets/}
+#'
+"income"
+
+#' Life expectancy
+#'
+#' life expectancy data by year and county from the Global Health Data Exchange.
+#'
+#' @format A data frame with three variables:
+#' \describe{
+#' \item{\code{year}}{Year}
+#' \item{\code{county_fips}}{FIPS county code}
+#' \item{\code{life_expect}}{Life expectancy at birth}
+#' }
+#'
+#' For further details, see \url{http://ghdx.healthdata.org/us-data}
 #'
 "life"
