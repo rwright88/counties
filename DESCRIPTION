@@ -1,22 +1,17 @@
 Package: counties
 Version: 0.0.0.9000
-Title: Get US County Data
-Description: Get the best available demographic, health, income, and other
-    US county data.
+Title: US county data
+Description: US county data by year for demographics, income, health, and other
+    data.
 Authors@R: person("Ray", "Wright", , "rwright88@gmail.com", c("aut", "cre"))
-License: MIT + file LICENSE
+License: CC0
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
+Depends:
+    R (>= 2.10)
 Imports: 
-    dplyr,
-    purrr,
-    readr,
-    stringr,
-    tidyr,
-    utils
-Suggests: 
-    testthat
+    tibble
 RoxygenNote: 6.0.1
 URL: https://github.com/rwright88/counties
 BugReports: https://github.com/rwright88/counties/issues
