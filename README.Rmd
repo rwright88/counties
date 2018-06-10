@@ -1,0 +1,44 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# counties
+
+This package contains US county data by year for demographics, income, health, and other data.
+
+## Installation
+
+``` r
+# install.packages("devtools")
+devtools::install_github("rwright88/counties")
+```
+## Usage
+
+```{r demographics}
+counties::demographics
+```
+
+```{r income}
+counties::income
+```
+
+```{r life}
+counties::life
+```
+
+## Sources
+
+- https://www2.census.gov/programs-surveys/popest/datasets/
+- https://www2.census.gov/programs-surveys/saipe/datasets/
+- http://ghdx.healthdata.org/us-data
