@@ -45,7 +45,7 @@ income <- map_dfr(files, read_income) %>%
     str_pad(county, 3, pad = "0"))
   ) %>%
   filter(str_sub(county_fips, 3, 5) != "000") %>%
-  select(year, county_fips, income_hh) %>%
-  arrange(year, county_fips)
+  select(county_fips, year, income_hh) %>%
+  arrange(county_fips, year)
 
 devtools::use_data(income, overwrite = TRUE)

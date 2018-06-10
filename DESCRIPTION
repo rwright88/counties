@@ -1,8 +1,7 @@
 Package: counties
 Version: 0.0.0.9000
 Title: US county data
-Description: US county data by year for demographics, income, health, and other
-    data.
+Description: US county data by year for demographics, income, and health.
 Authors@R: person("Ray", "Wright", , "rwright88@gmail.com", c("aut", "cre"))
 License: CC0
 Encoding: UTF-8

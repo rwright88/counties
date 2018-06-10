@@ -33,11 +33,11 @@ life <- map_dfr(files, ~ read_life(unz(temp, .))) %>%
     sex_id == 3
   ) %>%
   select(
-    year = year_id,
     county_fips,
+    year = year_id,
     life_expect = val
   ) %>%
-  arrange(year, county_fips)
+  arrange(county_fips, year)
 
 unlink(temp)
 

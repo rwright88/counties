@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 # counties
 
-This package contains US county data by year for demographics, income, health, and other data.
+This package contains US county data by year for demographics, income, and health.
 
 ## Installation
 
@@ -23,6 +23,7 @@ This package contains US county data by year for demographics, income, health, a
 # install.packages("devtools")
 devtools::install_github("rwright88/counties")
 ```
+
 ## Usage
 
 ```{r demographics}
