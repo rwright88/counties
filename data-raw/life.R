@@ -3,6 +3,11 @@ library(dplyr)
 library(stringr)
 library(purrr)
 
+file1 <- str_c(
+  "http://ghdx.healthdata.org/sites/default/files/record-attached-files/",
+  "IHME_USA_COUNTY_LE_MORTALITY_RISK_1980_2014_NATIONAL_STATES_DC_CSV.zip"
+)
+
 read_life <- function(path) {
   read_csv(
     path,
@@ -15,11 +20,6 @@ read_life <- function(path) {
     )
   )
 }
-
-file1 <- str_c(
-  "http://ghdx.healthdata.org/sites/default/files/record-attached-files/",
-  "IHME_USA_COUNTY_LE_MORTALITY_RISK_1980_2014_NATIONAL_STATES_DC_CSV.zip"
-)
 
 temp <- tempfile()
 download.file(file1, temp, quiet = TRUE)

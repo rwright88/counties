@@ -3,6 +3,11 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 
+file_2010 <- str_c(
+  "https://www2.census.gov/programs-surveys/popest/datasets/",
+  "2010-2016/counties/asrh/cc-est2016-alldata.csv"
+)
+
 read_pop <- function(file) {
   read_csv(
     file,
@@ -39,11 +44,6 @@ rec_race <- function(x) {
     TRUE ~ NA_character_
   )
 }
-
-file_2010 <- str_c(
-  "https://www2.census.gov/programs-surveys/popest/datasets/",
-  "2010-2016/counties/asrh/cc-est2016-alldata.csv"
-)
 
 raw <- read_pop(file_2010) %>%
   rename_all(str_to_lower) %>%
