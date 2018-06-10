@@ -3,21 +3,6 @@ library(dplyr)
 library(stringr)
 library(purrr)
 
-read_income <- function(file) {
-  # name of file must contain year of data
-  read_fwf(
-    file,
-    col_positions = fwf_cols(
-      state = c(1, 2),
-      county = c(4, 6),
-      income_hh = c(134, 139)
-    ),
-    col_types = "cci",
-    na = c("NA", "", ".")
-  ) %>%
-    mutate(year = as.integer(str_extract(file, "\\d{4}")))
-}
-
 url <- "https://www2.census.gov/programs-surveys/saipe/datasets/"
 files <- str_c(url, c(
   "2000/2000-state-and-county/est00all.dat",
@@ -39,13 +24,28 @@ files <- str_c(url, c(
   "2016/2016-state-and-county/est16all.txt"
 ))
 
+read_income <- function(file) {
+  # name of file must contain year of data
+  read_fwf(
+    file,
+    col_positions = fwf_cols(
+      state = c(1, 2),
+      county = c(4, 6),
+      income_hh = c(134, 139)
+    ),
+    col_types = "cci",
+    na = c("NA", "", ".")
+  ) %>%
+    mutate(year = as.integer(str_extract(file, "\\d{4}")))
+}
+
 income <- map_dfr(files, read_income) %>%
   mutate(county_fips = str_c(
     str_pad(state, 2, pad = "0"),
     str_pad(county, 3, pad = "0"))
   ) %>%
   filter(str_sub(county_fips, 3, 5) != "000") %>%
-  select(year, county_fips, income_hh) %>%
-  arrange(year, county_fips)
+  select(county_fips, year, income_hh) %>%
+  arrange(county_fips, year)
 
 devtools::use_data(income, overwrite = TRUE)

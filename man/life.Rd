@@ -6,8 +6,8 @@
 \title{Life expectancy}
 \format{A data frame with three variables:
 \describe{
-\item{\code{year}}{Year}
 \item{\code{county_fips}}{FIPS county code}
+\item{\code{year}}{Year}
 \item{\code{life_expect}}{Life expectancy at birth}
 }
 
@@ -16,6 +16,6 @@ For further details, see \url{http://ghdx.healthdata.org/us-data}}
 life
 }
 \description{
-life expectancy data by year and county from the Global Health Data Exchange.
+life expectancy data by county and year from the Global Health Data Exchange.
 }
 \keyword{datasets}

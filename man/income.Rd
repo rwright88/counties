@@ -6,8 +6,8 @@
 \title{Income}
 \format{A data frame with three variables:
 \describe{
-\item{\code{year}}{Year}
 \item{\code{county_fips}}{FIPS county code}
+\item{\code{year}}{Year}
 \item{\code{income_hh}}{Median household income}
 }
 
@@ -16,7 +16,7 @@ For further details, see \url{https://www2.census.gov/programs-surveys/saipe/dat
 income
 }
 \description{
-Income data by year and county from the US Census Bureau. Income is median
+Income data by county and year from the US Census Bureau. Income is median
 household income in nominal dollars.
 }
 \keyword{datasets}

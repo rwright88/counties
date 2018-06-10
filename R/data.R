@@ -3,13 +3,13 @@ NULL
 
 #' Demographics
 #'
-#' Demographics and population data by year and county from the US Census
+#' Demographics and population data by county and year from the US Census
 #' Bureau. Population is the population estimate as of July 1 of that year.
 #'
 #' @format A data frame with seven variables:
 #' \describe{
-#' \item{\code{year}}{Year}
 #' \item{\code{county_fips}}{FIPS county code}
+#' \item{\code{year}}{Year}
 #' \item{\code{population}}{Population estimate as of July 1}
 #' \item{\code{asian}}{Distribution of population that is Asian}
 #' \item{\code{black}}{Distribution of population that is Black}
@@ -23,13 +23,13 @@ NULL
 
 #' Income
 #'
-#' Income data by year and county from the US Census Bureau. Income is median
+#' Income data by county and year from the US Census Bureau. Income is median
 #' household income in nominal dollars.
 #'
 #' @format A data frame with three variables:
 #' \describe{
-#' \item{\code{year}}{Year}
 #' \item{\code{county_fips}}{FIPS county code}
+#' \item{\code{year}}{Year}
 #' \item{\code{income_hh}}{Median household income}
 #' }
 #'
@@ -39,12 +39,12 @@ NULL
 
 #' Life expectancy
 #'
-#' life expectancy data by year and county from the Global Health Data Exchange.
+#' life expectancy data by county and year from the Global Health Data Exchange.
 #'
 #' @format A data frame with three variables:
 #' \describe{
-#' \item{\code{year}}{Year}
 #' \item{\code{county_fips}}{FIPS county code}
+#' \item{\code{year}}{Year}
 #' \item{\code{life_expect}}{Life expectancy at birth}
 #' }
 #'
