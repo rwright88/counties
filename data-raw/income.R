@@ -4,6 +4,7 @@ library(stringr)
 library(purrr)
 
 url <- "https://www2.census.gov/programs-surveys/saipe/datasets/"
+
 files <- str_c(url, c(
   "2000/2000-state-and-county/est00all.dat",
   "2001/2001-state-and-county/est01all.dat",

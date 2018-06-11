@@ -8,9 +8,9 @@ file1 <- str_c(
   "IHME_USA_COUNTY_LE_MORTALITY_RISK_1980_2014_NATIONAL_STATES_DC_CSV.zip"
 )
 
-read_life <- function(path) {
+read_life <- function(file) {
   read_csv(
-    path,
+    file,
     col_types = cols_only(
       measure_id = col_integer(),
       FIPS = col_character(),
