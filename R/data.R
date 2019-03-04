@@ -1,6 +1,3 @@
-#' @importFrom tibble tibble
-NULL
-
 #' Demographics
 #'
 #' Demographics and population data by county and year from the US Census
